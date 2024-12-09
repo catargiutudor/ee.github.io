@@ -75,15 +75,18 @@ h2 {
 }
 
 .social-icons {
-    margin-top: 30px;
+    position: absolute; /* Place the icons relative to the viewport */
+    bottom: 15%; /* 15% from the bottom of the screen */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Adjust for true center alignment */
     display: flex;
     justify-content: center;
-    gap: 15px; /* Smaller gaps for alignment */
+    gap: 30px; /* Increase spacing between icons */
 }
 
 .social-icons a {
     color: white;
-    font-size: 22px; /* Smaller size for subtle look */
+    font-size: 22px; /* Maintain icon size */
     transition: color 0.3s;
 }
 
