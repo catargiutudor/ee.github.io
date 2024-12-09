@@ -1,29 +1,16 @@
-@font-face {
-    font-family: 'Aptos';
-    src: url('./fonts/Aptos-Light.ttf') format('truetype');
-    font-weight: 300;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Aptos-Bold';
-    src: url('./fonts/Aptos-Bold.ttf') format('truetype');
-    font-weight: bold;
-    font-style: normal;
-}
-
 body {
     margin: 0;
     padding: 0;
     font-family: 'Aptos', Arial, sans-serif;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
     min-height: 100vh;
     background-color: #011620;
     color: white;
     text-align: center;
-    overflow: hidden; /* Prevent scrolling */
+    overflow: hidden;
 }
 
 canvas {
@@ -31,24 +18,27 @@ canvas {
     top: 0;
     left: 0;
     z-index: 1;
-    pointer-events: none; /* Allow interaction with content */
+    pointer-events: none;
 }
 
 .content {
     position: relative;
     z-index: 2;
-    text-align: center;
-    padding: 0 20px; /* Ensure spacing for small screens */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 500px;
+    padding: 0 20px; /* Padding for small screens */
 }
 
 .logo {
-    width: 150px; /* Slightly smaller for balance */
+    width: 150px;
     margin-bottom: 20px; /* Space between logo and slogan */
 }
 
 h2 {
     font-size: 14px;
-    font-family: 'Aptos-Light', Arial, sans-serif;
     margin-bottom: 30px;
     font-weight: 300;
 }
@@ -57,7 +47,8 @@ h2 {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 320px; /* Fixed width for consistent button size */
+    width: 100%; /* Make buttons responsive to parent width */
+    max-width: 320px;
     padding: 12px 16px;
     font-size: 15px;
     text-decoration: none;
@@ -75,19 +66,16 @@ h2 {
 }
 
 .social-icons {
-    position: fixed; /* Fix icons relative to the viewport */
-    bottom: 15%; /* Position 15% from the bottom of the screen */
-    left: 50%; /* Center horizontally */
-    transform: translateX(-50%); /* Adjust for true center alignment */
+    position: relative;
     display: flex;
     justify-content: center;
-    gap: 30px; /* Increase spacing between icons */
-    z-index: 2; /* Ensure they remain above the background but below other UI elements */
+    gap: 20px; /* Increase spacing between icons */
+    margin-top: 40px; /* Space between buttons and icons */
 }
 
 .social-icons a {
     color: white;
-    font-size: 22px; /* Maintain icon size */
+    font-size: 22px; /* Icon size */
     transition: color 0.3s;
 }
 
@@ -95,3 +83,33 @@ h2 {
     color: #ccc;
 }
 
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .content {
+        padding: 0 10px; /* Reduce padding for small screens */
+    }
+
+    .logo {
+        width: 120px; /* Reduce logo size */
+    }
+
+    h2 {
+        font-size: 12px; /* Smaller font for mobile */
+        margin-bottom: 20px; /* Adjust spacing */
+    }
+
+    .button {
+        max-width: 280px; /* Adjust button width */
+        font-size: 14px; /* Slightly smaller text */
+        padding: 10px 14px; /* Compact padding */
+    }
+
+    .social-icons {
+        gap: 15px; /* Adjust spacing for smaller screens */
+        margin-top: 30px;
+    }
+
+    .social-icons a {
+        font-size: 20px; /* Smaller icon size */
+    }
+}
