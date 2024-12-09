@@ -75,13 +75,14 @@ h2 {
 }
 
 .social-icons {
-    position: absolute; /* Place the icons relative to the viewport */
-    bottom: 15%; /* 15% from the bottom of the screen */
+    position: fixed; /* Fix icons relative to the viewport */
+    bottom: 15%; /* Position 15% from the bottom of the screen */
     left: 50%; /* Center horizontally */
     transform: translateX(-50%); /* Adjust for true center alignment */
     display: flex;
     justify-content: center;
     gap: 30px; /* Increase spacing between icons */
+    z-index: 2; /* Ensure they remain above the background but below other UI elements */
 }
 
 .social-icons a {
@@ -93,3 +94,4 @@ h2 {
 .social-icons a:hover {
     color: #ccc;
 }
+
