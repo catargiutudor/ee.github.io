@@ -5,7 +5,7 @@ canvas.height = window.innerHeight;
 
 let nodeColor = '#012739'; // Subtle dark tone matching the background
 let lineOpacity = 0.15; // Low opacity for subtle visibility
-let numberOfNodes = 250; // Adjusted node count for simplicity
+let numberOfNodes = 50; // Adjusted node count for simplicity
 let nodes = [];
 let mouseX = canvas.width / 2;
 let mouseY = canvas.height / 2;
